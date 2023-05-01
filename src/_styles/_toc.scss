@@ -1,0 +1,30 @@
+.tableofcontents{
+    ul{
+        list-style-type: none;
+        padding: 1em 0;
+        margin: 0;
+
+        &:not(:last-child){
+            border-bottom: 1px solid $foreground;
+        }
+    }
+
+    li{
+        margin: 0.8em 0;
+    }
+
+    a{
+        @extend %link-with-arrow;
+    }
+
+    .currentpage a{
+        font-weight: 600;
+        opacity: 1;
+    }
+
+    .external-link i{
+        display: inline-block;
+        margin-left: 0.1em;
+        transform: scale(0.7);
+    }
+}

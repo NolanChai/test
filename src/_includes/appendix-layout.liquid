@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="{{ global.language }}">
+    <head>
+        {% include partials/headstuff %}
+        <title>{{ title }} | {{ global.title }}</title>
+    </head>
+    <body class="page-appendix">
+        {% include partials/darkmode %}
+        <div class="page-wrapper">
+            <div class="content-wrapper">
+                {% include partials/header %}
+                <main>
+                    <h1>
+                        {{ title }}
+                    </h1>
+                    {{ content }}
+                </main>
+                {% include partials/footer %}
+            </div>
+        </div>
+        <script src="/_scripts/darkmode.js"></script>
+    </body>
+</html>

@@ -1,0 +1,74 @@
+.page-index{
+    .content-wrapper{
+        min-height: 100vh;
+        display:flex;
+        flex-direction: column;
+        position: relative;
+    }
+
+    .booktitle{
+        display: none;
+    }
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-grow:1;
+
+        font-family: $body-font;
+    }
+
+    h1{
+        margin:0;
+    }
+
+    .front-page-nav{
+        text-align: center;
+        margin: 2em 0 2.5em;
+
+        ul{
+            list-style: none;
+            padding:0;
+            margin:0;
+        }
+
+        li:not(:last-child){
+            margin-bottom: 1em;
+        }
+
+        a{
+            @extend %link-with-arrow;
+        }
+    }
+
+    .social-links{
+        list-style: none;
+        padding:0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 300px;
+        justify-content: center;
+        font-size: 1.5rem;
+
+        li{
+            margin: 0 0.5em 0.3em;
+        }
+    }
+}
+
+.page-404{
+    @extend .page-index;
+
+    .booktitle{
+        display: inline-block;
+    }
+}
+
+%header-open--page-index{
+    & > .booktitle{
+        display:inline-block;
+    }
+}

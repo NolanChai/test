@@ -1,0 +1,76 @@
+$off-black: #101111;
+
+$foreground: var(--foreground, #{$off-black});
+$background: var(--background, #fff);
+
+$body-font: 'Crimson Text', serif;
+$ui-font: 'Raleway', sans-serif;
+
+$rem: 17px;
+
+$darkmodebtn-zindex:200;
+$menu-zindex: 100;
+
+$side-gutter: var(--side-gutter, 10vw);
+$min-width: 360px;
+$max-width: 1000px;
+
+:root{
+    --side-gutter: 10vw;
+    @media screen and (max-width: #{$min-width/0.8}){
+        --side-gutter: calc((100vw - #{$min-width})/2);
+    }
+    @media screen and (max-width: #{$min-width + 20px}){
+        --side-gutter: 15px;
+    }
+    @media screen and (min-width: #{$max-width/0.8}){
+        --side-gutter: calc((100vw - #{$max-width})/2);
+    }
+}
+
+%screenreader{
+    position:absolute;
+    display: block;
+    width:1px;
+    height:1px;
+    opacity: 0;
+    overflow: hidden;
+    cursor: default;
+    pointer-events: none;
+}
+
+%no-indent{
+    text-indent: 0;
+}
+
+%link-with-arrow{
+    position: relative;
+    background:none;
+
+    &::before{
+        $arrow-size: 0.3em;
+        content:'';
+        display: block;
+        box-sizing:content-box;
+        height:0;
+        width:0;
+        border-top:$arrow-size transparent solid;
+        border-left:$arrow-size $foreground solid;
+        border-bottom:$arrow-size transparent solid;
+        position: absolute;
+        right:calc(100% + #{$arrow-size});
+        top: calc(50% - #{$arrow-size});
+
+        opacity: 0;
+        transform: translateX(50%);
+        transition: 0.1s ease-out;
+        transition-property: opacity, transform;
+    }
+
+    &:hover, &:focus{
+        &::before{
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+}

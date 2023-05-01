@@ -1,0 +1,14 @@
+<input type="checkbox" id="menubtn-secretcheckbox">
+<header>
+    <label class="btn menubtn" for="menubtn-secretcheckbox" role="button" aria-label="{{ui-text.header.menuLabel}}"><div class="menuicon" aria-hidden="true"><div></div><div></div><div></div></div></label>
+    <span class="booktitle"><a href="{{collections.index[0].url}}">{{ global.title }}</a></span>
+    <div class="menu-container">
+    	<div class="menu">
+        	{% include partials/tableofcontents %}
+        </div>
+    </div>
+    
+    <label class="darkmodebtn" for="darkmodebtn-secretcheckbox" role="button" aria-label="{{ui-text.header.darkmodeLabel}}">
+    <div class="darkmodeicon" aria-hidden="true"><i class="fas fa-lightbulb"></i></div>
+    </label>
+</header>

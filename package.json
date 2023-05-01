@@ -1,0 +1,39 @@
+{
+  "name": "webnovel-template",
+  "version": "1.0.0",
+  "description": "A template for webnovels",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "once": "npx eleventy",
+    "serve": "npx eleventy --serve",
+    "oncescss": "gulp scss",
+    "scss": "gulp",
+    "start": "concurrently -k -c green.dim,cyan.dim -s first \"npm:serve\" \"npm:scss\"",
+    "cleandist": "node cleandist.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rosefae/webnovel-template.git"
+  },
+  "author": "Rose Liu <rose@byanyothername.me> (http://byanyothername.me/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rosefae/webnovel-template/issues"
+  },
+  "homepage": "https://github.com/Rosefae/webnovel-template#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.10.0",
+    "autoprefixer": "^9.7.6",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "markdown-it-attrs": "^3.0.2",
+    "node-sass": "^4.14.1"
+  },
+  "dependencies": {
+    "concurrently": "^4.1.0"
+  }
+}

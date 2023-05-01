@@ -1,0 +1,29 @@
+---
+eleventyExcludeFromCollections: true
+permalink: 404.html
+---
+
+<!doctype html>
+<html lang="{{ global.language }}">
+    <head>
+        {% include partials/headstuff %}
+        <title>404 | {{global.title}}</title>
+    </head>
+    <body class="page-404">
+        {% include partials/darkmode %}
+        <div class="page-wrapper">
+            <div class="content-wrapper">
+                {% include partials/header %}
+                <div class="container">
+                    <h1>{{ui-text.404.heading}}</h1>
+                    <p class="no-indent">
+                        {{ui-text.404.bodyText}}
+                        <a href="{{collections.index[0].url}}">{{ui-text.404.linkText}}</a>
+                    </p>
+                </div>
+                {% include partials/footer %}
+            </div>
+        </div>
+        <script src="/_scripts/darkmode.js"></script>
+    </body>
+</html>

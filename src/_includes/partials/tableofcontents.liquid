@@ -1,0 +1,53 @@
+<nav class="tableofcontents" aria-label="Table of Contents">
+    {%- if collections.rawChapters.length > 0 -%}
+        <ul>
+            {%- for chapterLink in collections.rawChapters -%}
+                {%- capture chapterUrl -%}
+                    /read/{{chapterLink.data.number}}/
+                {%- endcapture -%}
+
+                {%- assign chapterLinkNumberStyle = global.numberStyle -%}
+                {%- if chapterLink.data.numberStyle -%}
+                    {%- assign chapterLinkNumberStyle = chapterLink.data.numberStyle -%}
+                {%- endif -%}
+
+                <li {% if page.url == chapterUrl %}class="currentpage"{% endif %}>
+                    <a href="{{ chapterUrl }}">
+                        {%- if chapterLink.data.title -%}
+                            {% chapterNumber chapterLink.data.number, chapterLinkNumberStyle, "", ". " %}{{ chapterLink.data.title }}
+                        {%- else -%}
+                            {% chapterNumber chapterLink.data.number, chapterLinkNumberStyle, "Chapter ", "" %}
+                        {%- endif -%}
+                    </a>
+                </li>
+            {%- endfor -%}
+        </ul>
+    {%- endif -%}
+
+    {%- if collections.appendices.length > 0 -%}
+        <ul>
+            {%- for appendix in collections.appendices -%}
+                <li {% if page.url == appendix.url %}class="currentpage"{% endif %}>
+                    <a href="{{ appendix.url }}">{{ appendix.data.title }}</a>
+                </li>
+            {%- endfor -%}
+        </ul>
+    {%- endif -%}
+
+    {%- if chapter -%}
+        {%- assign mirrors = chapter.data.mirrors -%}
+    {%- else -%}
+        {%- assign mirrors = global.mirrors -%}
+    {%- endif -%}
+
+    {%- if mirrors.length > 0 -%}
+        <ul>
+            {%- for mirror in mirrors -%}
+                <li class="external-link">
+                    <a href="{{mirror.url}}" target="_blank" rel="noopener">{{mirror.name}} <i class="fas fa-external-link-alt"></i></a>
+                </li>
+            {%- endfor -%}
+        </ul>
+    {%- endif -%}
+
+</nav>

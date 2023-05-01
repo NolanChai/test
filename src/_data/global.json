@@ -1,0 +1,21 @@
+{
+    "title":"Book Title",
+    "author":"Author Name",
+    "year":"2019",
+    "language":"en",
+    "description":"A very compelling story about some well-rounded characters.",
+    "keywords":"novel, story, webnovel, webserial",
+    "url":"http://example.com/",
+    "numberStyle":"roman",
+    "mirrors":[
+        {
+            "name":"Mirror 1",
+            "url":"#"
+        },
+        {
+            "name":"Mirror 2",
+            "url":"#"
+        }
+    ],
+    "isComplete":false
+}

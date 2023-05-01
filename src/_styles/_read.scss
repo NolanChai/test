@@ -1,0 +1,27 @@
+.page-read{
+    .page-wrapper{
+        $progress-bar-width: 2px;
+        background-color: transparent;
+        background-image: linear-gradient(to right top, $foreground 50%, $background 50%);
+        background-size: 100% calc(100% - 100vh + #{$progress-bar-width});
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        z-index:0;
+
+        &::before{
+            bottom:$progress-bar-width;
+        }
+    }
+
+    .prevnext{
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-size: 0.9rem;
+        margin: 0 $side-gutter;
+
+        a{
+            padding-bottom: 2px;
+        }
+    }
+}
